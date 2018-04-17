@@ -253,16 +253,16 @@ WaitMore4:
 ;-------------------------------------led1
 
 
-StartX2:
+StartX21:
     BSF PORTB,0
     MOVLW   h'A4'              ;Starting Count = 0000
     MOVWF   TMR0H
     MOVLW   h'70'
     MOVWF   TMR0L
     BSF     T0CON, 7        ;Turn Timer 0N
-WaitMore:
+WaitMore21:
     BTFSS   INTCON, TMR0IF  ;Check for Count = FFFF
-    BRA     WaitMore
+    BRA     WaitMore21
     BCF     T0CON, 7        ;Turn Timer OFF
     BCF     INTCON, TMR0IF  ;Reset TIMER interrupt low
     BCF     PORTB,0
@@ -281,7 +281,7 @@ StartX22:
 
 WaitMore22:
     BTFSS   INTCON, TMR0IF  ;Check for Count = FFFF
-    BRA     WaitMore2 ;check WaitMore22
+    BRA     WaitMore22 
 
     BCF     T0CON, 7        ;Turn Timer OFF
     BCF     INTCON, TMR0IF  ;Reset TIMER interrupt low
@@ -291,7 +291,7 @@ WaitMore22:
        
     ;------------------------------------led3
 
-StartX3:
+StartX31:
     BCF PORTB,0
     BSF PORTB,1
     MOVLW   h'67'              ;Starting Count = 0000
@@ -300,9 +300,9 @@ StartX3:
     MOVWF   TMR0L
     BSF     T0CON, 7        ;Turn Timer 0N
 
-WaitMore3:
+WaitMore32:
     BTFSS   INTCON, TMR0IF  ;Check for Count = FFFF
-    BRA     WaitMore2
+    BRA     WaitMore32
 
     BCF     T0CON, 7        ;Turn Timer OFF
     BCF     INTCON, TMR0IF  ;Reset TIMER interrupt low
@@ -313,7 +313,7 @@ WaitMore3:
         
     ;-------------------------------led4
 
-StartX4:
+StartX42:
     BCF PORTB,0
     BSF PORTB,1
     MOVLW   h'67'              ;Starting Count = 0000
@@ -322,9 +322,9 @@ StartX4:
     MOVWF   TMR0L
     BSF     T0CON, 7        ;Turn Timer 0N
 
-WaitMore4:
+WaitMore42:
     BTFSS   INTCON, TMR0IF  ;Check for Count = FFFF
-    BRA     WaitMore2
+    BRA     WaitMore42
 
     BCF     T0CON, 7        ;Turn Timer OFF
     BCF     INTCON, TMR0IF  ;Reset TIMER interrupt low
@@ -335,16 +335,16 @@ WaitMore4:
 ;-------------------------------------led1
 
 
-StartX:
+StartX33:
     BSF PORTB,0
     MOVLW   h'A4'              ;Starting Count = 0000
     MOVWF   TMR0H
     MOVLW   h'70'
     MOVWF   TMR0L
     BSF     T0CON, 7        ;Turn Timer 0N
-WaitMore:
+Waitmore33:
     BTFSS   INTCON, TMR0IF  ;Check for Count = FFFF
-    BRA     WaitMore
+    BRA     WaitMore33
     BCF     T0CON, 7        ;Turn Timer OFF
     BCF     INTCON, TMR0IF  ;Reset TIMER interrupt low
     BCF     PORTB,0
@@ -352,7 +352,7 @@ WaitMore:
     
  ;------------------------------------led2
 
-StartX2:
+StartX23:
     BCF PORTB,0
     BSF PORTB,1
     MOVLW   h'67'              ;Starting Count = 0000
@@ -361,9 +361,9 @@ StartX2:
     MOVWF   TMR0L
     BSF     T0CON, 7        ;Turn Timer 0N
 
-WaitMore2:
+WaitMore23:
     BTFSS   INTCON, TMR0IF  ;Check for Count = FFFF
-    BRA     WaitMore2
+    BRA     WaitMore23
 
     BCF     T0CON, 7        ;Turn Timer OFF
     BCF     INTCON, TMR0IF  ;Reset TIMER interrupt low
@@ -382,9 +382,9 @@ StartX3:
     MOVWF   TMR0L
     BSF     T0CON, 7        ;Turn Timer 0N
 
-WaitMore3:
+WaitMore33:
     BTFSS   INTCON, TMR0IF  ;Check for Count = FFFF
-    BRA     WaitMore2
+    BRA     WaitMore33
 
     BCF     T0CON, 7        ;Turn Timer OFF
     BCF     INTCON, TMR0IF  ;Reset TIMER interrupt low
@@ -395,7 +395,7 @@ WaitMore3:
         
     ;-------------------------------led4
 
-StartX4:
+StartX43:
     BCF PORTB,0
     BSF PORTB,1
     MOVLW   h'67'              ;Starting Count = 0000
@@ -404,9 +404,9 @@ StartX4:
     MOVWF   TMR0L
     BSF     T0CON, 7        ;Turn Timer 0N
 
-WaitMore4:
+WaitMore43:
     BTFSS   INTCON, TMR0IF  ;Check for Count = FFFF
-    BRA     WaitMore2
+    BRA     WaitMore43
 
     BCF     T0CON, 7        ;Turn Timer OFF
     BCF     INTCON, TMR0IF  ;Reset TIMER interrupt low
